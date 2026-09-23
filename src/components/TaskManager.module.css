@@ -2,19 +2,22 @@
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
+  border: 1px solid;
   border-radius: 8px;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .light {
   background-color: #FFFFFF;
   color: #000000;
+  border-color: #1E90FF;
 }
 
 .dark {
   background-color: #242629;
   color: #FFFFFF;
+  border-color: #85D1B0;
 }
 
 .inputRow {
