@@ -1,5 +1,12 @@
+import { ThemeProvider } from "./context/ThemeProvider";
+import Navbar from "./components/Navbar";
+
 function App() {
-  return <h1>React State Management</h1>;
+  return (
+    <ThemeProvider>
+      <Navbar />
+    </ThemeProvider>
+  );
 }
 
 export default App;
