@@ -278,3 +278,46 @@ import TaskManager from "./components/TaskManager";
 ### Note: You need to import the context Provider and wrap it around your app
 ---
 
+
+---
+
+## Running the Project
+
+```bash
+npm install
+npm run dev
+```
+
+The app runs at `http://localhost:5173/`. To create a production build, run `npm run build`, and to check code quality, run `npm run lint`.
+
+## Project Structure
+
+```
+src/
+  components/
+    Layout.tsx
+    Layout.module.css
+    Navbar.tsx
+    Navbar.module.css
+    TaskManager.tsx
+    TaskManager.module.css
+  constants/
+    theme.ts
+  context/
+    ThemeContext.ts
+    ThemeProvider.tsx
+  hooks/
+    useTheme.ts
+  reducers/
+    taskReducer.ts
+  App.tsx
+  main.tsx
+```
+
+## Implementation Notes
+
+I split the theme logic into three files: the typed context in `ThemeContext.ts`, the provider in `ThemeProvider.tsx`, and the `useTheme` hook in `hooks/useTheme.ts`. This keeps each file focused and satisfies the React Refresh lint rule, which expects component files to export only components.
+
+The theme applies to the whole page, not only the Task Manager. The Layout, Navbar, and Task Manager all read the current theme through `useTheme` and use the colors from the palette above.
+
+In the Task Manager, tasks are trimmed before they are added, the Add button is disabled for empty input, and a message shows when the list is empty. The reducer's state and action types are exported so the component can use them.
